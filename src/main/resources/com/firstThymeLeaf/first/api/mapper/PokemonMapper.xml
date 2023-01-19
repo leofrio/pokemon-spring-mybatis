@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.firstThymeLeaf.first.api.mapper.PokemonMapper">
+
+    <select id="getAllPokemon" parameterType="map" resultType="com.firstThymeLeaf.first.api.model.Pokemon">
+        SELECT
+        p.id as id, p.p_name as name, p.p_level as level,p.evolves
+        FROM pokemons p
+        order by p.id LIMIT #{limit} OFFSET  #{offset}
+    </select>
+
+</mapper>
